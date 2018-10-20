@@ -10,10 +10,14 @@ class App extends React.Component {
     this.state = { 
       repos: []
     }
-
+    //this.getRepos = this.getRepos.bind(this);
   }
 
   componentDidMount() {
+    this.getRepos()
+  }
+
+  getRepos() {
     $.ajax({
       url: '/repos',
       method: 'GET',
@@ -40,7 +44,9 @@ class App extends React.Component {
       method: 'POST',
       data: JSON.stringify(username),
       contentType: 'application/json',
-      success: () => {},
+      success: () => {
+        this.getRepos();
+      },
       error: (err) => {
         console.log(err)
       }

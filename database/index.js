@@ -27,7 +27,6 @@ let save = (repoArr, callback) => {
       if(err) {
         callback(err);
       } else {
-        console.log(results)
         if(!results) {
            repos.save((err, repos) => {
              callback(err);
