@@ -10,7 +10,6 @@ class App extends React.Component {
     this.state = { 
       repos: []
     }
-    //this.getRepos = this.getRepos.bind(this);
   }
 
   componentDidMount() {
