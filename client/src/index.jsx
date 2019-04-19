@@ -34,7 +34,6 @@ class App extends React.Component {
 
   search (term) {
     console.log(`${term} was searched`);
-    // TODO
     var username = {
       username: term
     }

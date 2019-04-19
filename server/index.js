@@ -7,18 +7,17 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use(express.json());
 
 app.post('/repos', function (req, res) {
-console.log('post')
-  // TODO - your code here!
+  console.log('post')
   // This route should take the github username provided
   // and get the repo information from the github API, then
   // save the repo information in the database
   getRepos.getReposByUsername(req.body.username, (err, response, body) => {
-    if(err) {
+    if (err) {
       res.status(500).send(err.message);
     } else{
       var repoArr = JSON.parse(body);
       db.save(repoArr, (err) => {
-        if(err) {
+        if (err) {
           res.status(500).send(err.message);
         } else {
           res.send();
@@ -29,11 +28,10 @@ console.log('post')
 });
 
 app.get('/repos', function (req, res) {
-console.log('get')
-  // TODO - your code here!
+  console.log('get')
   // This route should send back the top 25 repos
   db.getTop25((err, results) => {
-    if(err) {
+    if (err) {
       res.status(500).send(err.message);
     } else {
       res.send(results)
