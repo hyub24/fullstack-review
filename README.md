@@ -13,6 +13,8 @@ The top 25 repos will be sorted by the number of star gazers for each repo.
 * Use the config.example.js file to make a correct config.js file with your github token
 * `npm run build` 
 * To build the bundle
+* `mongod`
+* To start the mongo server
 * `npm run start`
 * To start the server
 * Go to local host port 1128 to use the app
